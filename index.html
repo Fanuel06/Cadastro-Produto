@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Produto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+    <header class="header">Cadastro de Produtos</header>
+    <main>
+        <article class="formulario">
+            <form>
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" name="NomeProduto" id="productName" required>
+                <br>
+                <label for="productPrice">Preço do Produto:</label>
+                <input type="number" name="PrecoProduto" min="0" id="productPrice" required>
+                <br>
+                <label for="categoryInput">Categoria do Produto:</label>
+                <input type="text" name="CategoriaProduto" id="categoryInput" required>
+                <br>
+                <button type="button" id="botaoCadastro" class="botao">Cadastrar</button>
+                <input type="hidden" id="productId">
+            </form>
+        </article>
+        <article>
+            <table class="tabela" id="tagTabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>
+                            Categoria
+                            <select id="seletorCategoria" onchange="aplicarFiltro()">
+                                <option value="">Todas</option>
+                            </select>
+                        </th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable">
+                </tbody>
+            </table>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
